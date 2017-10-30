@@ -7,7 +7,9 @@
     "hexo": "./bin/hexo"
   },
   "scripts": {
-    "test": "make test"
+    "test": "make test",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "directories": {
     "lib": "./lib",
@@ -20,7 +22,13 @@
   "bugs": {
     "url": "https://github.com/tommy351/hexo/issues"
   },
-  "keywords": ["website", "blog", "cms", "framework", "hexo"],
+  "keywords": [
+    "website",
+    "blog",
+    "cms",
+    "framework",
+    "hexo"
+  ],
   "author": "Tommy Chen <tommy351@gmail.com> (http://zespia.tw)",
   "license": {
     "type": "MIT",
@@ -42,10 +50,12 @@
     "graceful-fs": "*",
     "mime": "*",
     "optimist": "*",
-    "fs-watch-tree": "*"
+    "fs-watch-tree": "*",
+    "snyk": "^1.47.0"
   },
   "devDependencies": {
     "mocha": "*",
     "should": "*"
-  }
+  },
+  "snyk": true
 }
